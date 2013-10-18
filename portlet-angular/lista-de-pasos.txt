@@ -1,0 +1,63 @@
+Inicio con binding
+
+<div ng-app="">
+	<input type="text" ng-model="data.message">
+	<h2>{{"Class TWG: " + data.message}}</h2>
+	<div class="{{data.message}}">
+		Esto tiene la class {{data.message}}
+	</div>
+</div>
+
+Controller
+
+Crear un controler FirstCtrl y agregar
+un div con ng-controller
+<div ng-controller="FirstCtrl">
+	<input type="text" ng-model="data.message">
+	<h2>{{"Class TWG: " + data.message}}</h2>
+	<div class="{{data.message}}">
+		Esto tiene la class {{data.message}}
+	</div>
+</div>
+Mostrar crear angluar app
+
+var myApp = angular.module("myApp",[])
+myApp.factory("Data");
+
+Valores validos de class: alert alert-success alert-error alert-info
+Default	<span class="label">Default</span>
+Success	<span class="label label-success">Success</span>
+Warning	<span class="label label-warning">Warning</span>
+Important	<span class="label label-important">Important</span>
+Info	<span class="label label-info">Info</span>
+Inverse	<span class="label label-inverse">Inverse</span>
+
+alert alert-error
+alert alert-success
+
+
+{
+	name: "TV",
+	brand: "LG",
+	price: "234.00"
+},
+{
+	name: "TV 32",
+	brand: "Sony",
+	price: "254.00"
+},
+{
+	name: "TV Smart 32",
+	brand: "Samsung",
+	price: "500.00"
+},
+{
+	name: "TV 42 LED",
+	brand: "Samsung",
+	price: "654.00"
+},
+{
+	name: "TV",
+	brand: "LG",
+	price: "234.00"
+}

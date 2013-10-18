@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />	
+	<title>Angular JS</title>
+	<link rel="stylesheet" type="text/css" href="../../css/twg.css">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/font-awesome.css">
+<body>
+
+	<h3 class="label label-info">Hi Angular JS !!!</h3>
+	<div ng-app="myApp" id="myApp">
+		<h3 class="alert alert-info">My App</h3>
+		<div ng-controller="FirstCtrl">
+			<input type="text" ng-model="data.message">
+			<h2>{{data.message}}</h2>
+			<div class="{{data.message}}">
+				Function: <strong>{{toCamelCase(data.message)}}</strong>
+			</div>
+			<div class="{{data.message}}">
+				Filter: <strong>{{data.message | camelCase}}</strong>
+			</div>
+
+		</div>
+	</div>
+
+	<div ng-app="myProducts" id="myProductsApp">
+		<h3 class="alert alert-info">Product App</h3>
+
+		<div ng-controller="ProductCtrl">
+
+			<select ng-model="orderProp">
+			  <option value="name">&uarr; Name</option>
+			  <option value="-name">&darr; Name</option>
+			  <option value="brand">Brand</option>
+			  <option value="price">Price</option>
+			</select>
+
+			<select ng-model="nroRecords">
+			  <option value="5">5</option>
+			  <option value="-5">-5</option>
+			  <option value="10">10</option>
+			  <option value="15">15</option>
+			  <option value="100">100</option>
+			</select>
+
+			<form class="navbar-search pull-left">
+	    		<input type="text" class="search-query" placeholder="Search" ng-model="search">
+	    	</form>
+
+			<table class="twg">
+				<thead>
+					<th>Name</th>
+					<th>Brand</th>
+					<th>Price</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="product in products | orderBy:orderProp | limitTo:nroRecords | filter:search">
+						<td>{{product.name|uppercase}}</td>
+						<td>{{product.brand|uppercase}}</td>
+						<td>{{product.price|currency}}</td>
+					</tr>
+				</tbody>
+
+			</table>
+			
+		</div>
+	</div>
+
+<script type="text/javascript" src="../../js/vendors/jquery/jquery.js"></script>
+<script type="text/javascript" src="../../js/vendors/angular/angular.js"></script>
+<script type="text/javascript" src="../../js/vendors/angular/angular-resource.js"></script>
+<script type="text/javascript" src="../../js/index.js"></script>
+</body>
+</html>

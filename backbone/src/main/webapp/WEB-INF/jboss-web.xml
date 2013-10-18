@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jboss-web>
+	<class-loading java2ClassLoadingCompliance="true">
+	</class-loading>
+</jboss-web>
